@@ -1,0 +1,10 @@
+services:
+  systemd:
+    image: complete-ubuntu:v1.0.0
+    build: .
+    container_name: complete-ubuntu
+    privileged: true
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    ports:
+      - 3022:22
