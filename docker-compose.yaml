@@ -7,4 +7,4 @@ services:
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:rw
     ports:
-      - 3022:22
+      - 22222:22

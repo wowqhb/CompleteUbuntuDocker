@@ -1,9 +1,9 @@
 # 1. 基础镜像：选择 Ubuntu LTS 版本（稳定、支持周期长）
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 # 2. 维护者信息（可选）
 LABEL maintainer="Karol.Qu"
-LABEL description="Complete Ubuntu 20.04 container with systemd, common tools, and environment optimization"
+LABEL description="Complete Ubuntu 22.04 container with systemd, common tools, and environment optimization"
 
 # 3. 环境变量配置（避免交互、优化编码、自定义路径）
 ENV DEBIAN_FRONTEND=noninteractive
@@ -16,9 +16,9 @@ ENV USER=karol
 RUN apt update -y && apt upgrade -y && \
     apt install -y --no-install-recommends \
     # 基础工具：文本编辑、网络、进程管理
-    vim curl wget net-tools iproute2 procps psmisc \
+    vim curl wget net-tools iproute2 procps psmisc iputils-ping telnet \
     # 系统工具：压缩、时区、服务管理
-    unzip tar gzip tzdata systemd systemd-sysv htop \
+    unzip tar gzip tzdata systemd systemd-sysv htop cron \
     # 开发工具（可选）：git、gcc、make
     git gcc make\
     # 清理 apt 缓存（减小容器体积）
