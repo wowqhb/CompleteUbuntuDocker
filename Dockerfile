@@ -12,6 +12,8 @@ ENV LC_ALL=en_US.UTF-8
 ENV PATH=$PATH:/usr/local/bin
 ENV USER=karol
 
+RUN yes | unminimize
+
 # 4. 预装基础工具（按需增减）
 RUN apt update -y && apt upgrade -y && \
     apt install -y --no-install-recommends \
