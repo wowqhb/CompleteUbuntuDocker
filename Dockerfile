@@ -12,6 +12,10 @@ ENV LC_ALL=en_US.UTF-8
 ENV PATH=$PATH:/usr/local/bin
 ENV USER=karol
 
+RUN sed -i.bak 's#http://archive.ubuntu.com#http://mirrors.aliyun.com#g' /etc/apt/sources.list \
+    && sed -i 's#http://security.ubuntu.com#http://mirrors.aliyun.com#g' /etc/apt/sources.list \
+    && apt update -y
+
 RUN yes | unminimize
 
 # 4. 预装基础工具（按需增减）

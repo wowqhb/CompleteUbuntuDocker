@@ -1,6 +1,6 @@
 services:
   systemd:
-    image: complete-ubuntu:v1.0.0
+    image: complete-ubuntu:v2.0.0
     build: .
     container_name: complete-ubuntu
     privileged: true
